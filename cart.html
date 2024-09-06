@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <!-- <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <link href="cart.css" rel="stylesheet" />
+    <script defer src="cart.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <p>
+        Sign up and get 20% off your first order. <a href="#">Sign Up Now</a>
+      </p>
+    </header>
+
+    <nav class="navbar">
+      <div class="logo">SHOP.CO</div>
+      <div class="menu">
+        <a href="#">Shop</a>
+        <a href="#">On Sale</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Brands</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for products..." />
+      </div>
+      <div class="icons">
+        <i class="fas fa-search"></i>
+
+        <a href="cart.html">
+          <img src="pics/cartlogo.png" />
+        </a>
+        <a href="">
+          <img src="pics/profilelogo.png" />
+        </a>
+      </div>
+    </nav>
+
+    <div class="breadcrumb"><a href="#">Home</a> &gt; <span>Cart</span></div>
+
+    <main class="container">
+      <section class="cart-items">
+        <h2>Your Cart</h2>
+        <div class="cart-item">
+          <img src="pics/pic1.png" alt="Gradient Graphic T-shirt" />
+          <div class="cart-item-details">
+            <p>Gradient Graphic T-shirt</p>
+            <p>Size: Large</p>
+            <p>Color: White</p>
+          </div>
+          <div class="cart-item-price">$145</div>
+          <div class="cart-item-quantity">
+            <button class="decrease">-</button>
+            <span>1</span>
+            <button class="increase">+</button>
+          </div>
+          <div class="cart-item-remove">
+            <img src="pics/Frame.png" alt="Remove item" />
+          </div>
+        </div>
+
+        <div class="cart-item">
+          <img src="pics/Frameee) (1).png" alt="Checkered Shirt" />
+          <div class="cart-item-details">
+            <p>Checkered Shirt</p>
+            <p>Size: Medium</p>
+            <p>Color: Red</p>
+          </div>
+          <div class="cart-item-price">$180</div>
+          <div class="cart-item-quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div class="cart-item-remove">
+            <img src="pics/Frame.png" alt="Remove item" />
+          </div>
+        </div>
+
+        <div class="cart-item">
+          <img src="pics/Frameee) (2).png" alt="Skinny Fit Jeans" />
+          <div class="cart-item-details">
+            <p>Skinny Fit Jeans</p>
+            <p>Size: Large</p>
+            <p>Color: Blue</p>
+          </div>
+          <div class="cart-item-price">$240</div>
+          <div class="cart-item-quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </div>
+          <div class="cart-item-remove">
+            <img src="pics/Frame.png" alt="Remove item" />
+          </div>
+        </div>
+      </section>
+
+      <aside class="order-summary">
+        <h2>Order Summary</h2>
+        <p>Subtotal <span>$565</span></p>
+        <p>Discount (-20%) <span>-$113</span></p>
+        <p>Delivery Fee <span>$15</span></p>
+        <p class="total">Total <span>$467</span></p>
+        <div class="promo-code">
+          <input type="text" placeholder="Add promo code" />
+          <button>Apply</button>
+        </div>
+        <button class="checkout-button">
+          Go to Checkout <i class="fas fa-arrow-right"></i>
+        </button>
+      </aside>
+    </main>
+
+    <section class="newsletter">
+      <h2>Stay Up To Date About Our Latest Offers</h2>
+      <input type="email" placeholder="Enter your email address" />
+      <button>Subscribe to Newsletter</button>
+    </section>
+
+    <footer class="footer">
+      <div class="column">
+        <h3>SHOP.CO</h3>
+        <p>
+          We have clothes that suit your style and which you're proud to wear.
+          From women to men.
+        </p>
+        <div class="social-icons">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-github"></i>
+        </div>
+      </div>
+      <div class="column">
+        <h3>Company</h3>
+        <p><a href="#">About</a></p>
+        <p><a href="#">Features</a></p>
+        <p><a href="#">Works</a></p>
+        <p><a href="#">Career</a></p>
+      </div>
+      <div class="column">
+        <h3>Help</h3>
+        <p><a href="#">Customer Support</a></p>
+        <p><a href="#">Delivery Details</a></p>
+        <p><a href="#">Terms & Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+      <div class="column">
+        <h3>FAQ</h3>
+        <p><a href="#">Account</a></p>
+        <p><a href="#">Manage Deliveries</a></p>
+        <p><a href="#">Orders</a></p>
+        <p><a href="#">Payments</a></p>
+      </div>
+      <div class="column">
+        <h3>Resources</h3>
+        <p><a href="#">Free eBooks</a></p>
+        <p><a href="#">Development Tutorial</a></p>
+        <p><a href="#">How to - Blog</a></p>
+        <p><a href="#">YouTube Playlist</a></p>
+      </div>
+      <div class="column payment-methods"></div>
+      <div class="footer-bottom">
+        <p>Shop.co © 2000-2023, All Rights Reserved</p>
+        <div class="payment-icons">
+          <img src="pics/Badge.png" alt="Visa" />
+          <img src="pics/Badge2.png" alt="Mastercard" />
+          <img src="pics/paypal.png" alt="PayPal" />
+          <img src="pics/342.png" alt="Apple Pay" />
+          <img src="pics/aaaa.png" alt="Google Pay" />
+        </div>
+        <!-- <div class="social-icons">
+          <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="github"><i class="fab fa-github"></i></a>
+        </div> -->
+      </div>
+    </footer>
+  </body>
+</html>
