@@ -328,3 +328,15 @@ body {
     display: none; /* Hide only the search icon */
   }
 }
+@media (max-width: 400px) {
+  .container {
+    margin-left: 0px;
+  }
+  .newsletter input {
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+  .newsletter button {
+    border-radius: 20px;
+  }
+}

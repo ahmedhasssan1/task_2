@@ -128,16 +128,22 @@ nav ul li a {
   align-items: center;
   flex-wrap: wrap;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: #f2f0f1;
 }
 
 .hero-text {
-  max-width: 50%;
+  max-width: 40%;
 }
 
 .hero-text h2 {
-  font-size: 36px;
   margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 50px;
+  height: 175px;
+  top: 237px;
+  left: 100px;
+  border: 1px 0px 0px 0px;
 }
 
 .hero-text p {
@@ -150,13 +156,15 @@ nav ul li a {
   background-color: #000;
   color: #fff;
   border: none;
+  width: 10rem;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
 }
 
 .hero-image img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -196,7 +204,7 @@ nav ul li a {
 .product-card {
   flex: 1 1 250px;
   max-width: 250px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 8px;
   padding: 16px;
   background-color: #fff;
@@ -295,7 +303,6 @@ nav ul li a {
 .product-card {
   flex: 1 1 250px;
   max-width: 250px;
-  border: 1px solid #ddd;
   border-radius: 8px;
   padding: 16px;
   /* background-color: #fff; */
@@ -501,22 +508,22 @@ footer {
   }
 }
 .stats {
-  display: flex; /* Use flexbox to arrange children in a row */
-  justify-content: space-around; /* Space out items evenly */
-  align-items: center; /* Center items vertically */
-  padding: 30px; /* Add padding around the content */
-  background-color: #f7f7f7; /* Background color for the section */
-  text-align: left; /* Center text within each stat */
-  gap: 20px; /* Optional: Space between each stat item */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  background-color: #f2f0f1;
+  text-align: left;
+  gap: 20px;
 }
 
 .stat {
-  flex: 1; /* Allow items to grow and shrink equally */
-  padding: 10px; /* Add padding inside each stat */
+  flex: 1;
+  padding: 10px;
 }
 
 .stat h2 {
-  font-size: 36px; /* Font size for the stats number */
+  font-size: 36px;
   margin: 0; /* Remove default margin */
 }
 
@@ -548,13 +555,13 @@ footer {
   padding: 10px;
   width: 40%;
   text-align: left;
-  flex: 0 0 25%; /* Each review card takes 25% of the container width */
+  flex: 0 0 25%;
   max-width: 25%;
-  margin-right: 10px; /* Optional: Add some spacing between the cards */
+  margin-right: 10px;
 }
 @media (max-width: 800px) {
   .review-card {
-    flex: 0 0 50%; /* Each review card takes 25% of the container width */
+    flex: 0 0 50%;
   }
 }
 .review-card .stars {
@@ -591,14 +598,12 @@ footer {
   cursor: pointer;
 }
 
-/* Ensure the image fills the button */
 .directions-btn button img {
-  display: block; /* Removes any extra space around the image */
+  display: block;
 }
 
-/* Optional: Add a hover effect */
 .directions-btn button:hover img {
-  filter: brightness(0.8); /* Darken the arrow slightly on hover */
+  filter: brightness(0.8);
 }
 .social-icons {
   display: flex;
@@ -698,7 +703,7 @@ footer {
 }
 @media (min-width: 768px) {
   .header .search input {
-    width: 30rem;
+    width: 10rem;
   }
 }
 
@@ -723,6 +728,8 @@ footer {
     .search-bar {
       width: 30%;
       display: block;
+    }
+    .reviews {
     }
 
     .search .fa-search {
@@ -750,13 +757,14 @@ footer {
     }
 
     .newsletter-input input {
-      width: 100%;
-      max-width: 100%;
+      width: 53%;
       margin-bottom: 10px;
+      border-radius: 30px;
     }
 
     .newsletter-input button {
-      width: 100%;
+      width: 56%;
+      border-radius: 30px;
     }
 
     .footer-content {
@@ -825,5 +833,226 @@ footer {
     .stat p {
       font-size: 1rem;
     }
+  }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 320px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 24px;
+    white-space: normal;
+    line-height: 1.4;
+    text-align: center;
+    display: block;
+    word-wrap: break-word;
+  }
+
+  .hero-text p {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Stats Section */
+  .stats {
+    flex-direction: column;
+  }
+
+  .stat h2 {
+    font-size: 18px;
+  }
+
+  .stat p {
+    font-size: 14px;
+  }
+  */
+
+  /* Products Grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Brands Section */
+  .brands-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: center;
+  }
+
+  .brands-container span {
+    font-size: 14px;
+  }
+
+  /* Browse by Style Section */
+  .style-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .style img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .newsletter-input {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .newsletter-input input {
+    width: 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  /* Header section */
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    font-size: 10px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 20%;
+  }
+
+  .search input {
+    width: 70%;
+  }
+
+  .search img {
+    width: 15px;
+    height: 20px;
+  }
+
+  /* Hero section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .hero-text h2 {
+    font-size: 22px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .hero-text button {
+    margin-top: 10px;
+    padding: 10px 20px;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Stats section */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .stat h2 {
+    font-size: 18px;
+  }
+
+  .stat p {
+    font-size: 12px;
+  }
+
+  /* Brands section */
+  .brands-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .new-arrival2 {
+    margin-left: 90px;
+  }
+
+  .brands-container span {
+    font-size: 14px;
+    margin: 5px;
+  }
+}
+@media (max-width: 300px) {
+  .footer-section.company-info {
+    text-align: left; /* Align text to the left */
+  }
+
+  .footer-section.company-info .social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 14px;
+    background-color: #f1f1f1;
   }
 }
