@@ -339,4 +339,12 @@ body {
   .newsletter button {
     border-radius: 20px;
   }
+  .cart-item {
+    margin-right: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
 }
