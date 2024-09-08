@@ -167,7 +167,7 @@ const products = async function (id) {
       stars += '⭐';
     }
     const markup = `
-          <div class="product">
+          <div class="product2">
             <a>
             <img
               alt="Polo with Contrast Trims"
@@ -249,9 +249,8 @@ function getFirstStoredItem(key) {
   // Retrieve the data from localStorage and parse it
   const items2 = JSON.parse(localStorage.getItem(key)) || [];
 
-  // Check if the array is empty
   if (items2.length === 0) {
-    return null; // Return null if no data is found
+    return null;
   }
 
   // Return the last item
@@ -347,25 +346,25 @@ const cartnums = document.querySelector('.numsitems');
 const numsofcart = JSON.parse(localStorage.getItem('cartitems')).length;
 console.log((cartnums.textContent = numsofcart));
 
-// window.addEventListener('click', function (e) {
-//   if (e.target.classList.contains('add-to-cart')) {
-//     const clickbutton = e.target;
-//     const productcard = clickbutton.closest('.product-card');
-//     if (productcard) {
-//       const producttitle =
-//         productcard.querySelector('.product-title').textContent;
-//       const productimage = productcard.querySelector('img').src;
-//       const productprice = productcard.querySelector('.curr-price').textContent;
-//       const productinfo = {
-//         title: producttitle,
-//         image: productimage,
-//         price: productprice,
-//       };
-//       console.log(imageinfo);
-//       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
-//       items.push(productinfo);
-//       localStorage.setItem('cartitems', JSON.stringify(items));
-//       this.window.location.reload();
-//     }
-//   }
-// });
+window.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart')) {
+    const clickbutton = e.target;
+    const productcard = clickbutton.closest('.product2');
+    if (productcard) {
+      const producttitle =
+        productcard.querySelector('.product-title').textContent;
+      const productimage = productcard.querySelector('img').src;
+      const productprice = productcard.querySelector('.curr-price').textContent;
+      const productinfo = {
+        title: producttitle,
+        image: productimage,
+        price: productprice,
+      };
+      console.log(productinfo);
+      let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
+      items.push(productinfo);
+      localStorage.setItem('cartitems', JSON.stringify(items));
+      this.window.location.reload();
+    }
+  }
+});

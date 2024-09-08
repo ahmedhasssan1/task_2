@@ -296,36 +296,36 @@ body {
   }
 
   .icons .fa-search {
-    display: none; /* Hide only the search icon */
+    display: none;
   }
 }
 
 @media (max-width: 765px) {
   .search input {
-    display: none; /* Hide search bar on small screens */
+    display: none;
   }
 
   .icons {
-    display: flex; /* Show icons on small screens */
-    justify-content: flex-end; /* Align icons to the right */
-    gap: 10px; /* Add spacing between icons */
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
   .navbar .menu a {
     display: none;
   }
 
   .icons i {
-    font-size: 20px; /* Adjust icon size if needed */
+    font-size: 20px;
   }
 }
 @media (min-width: 763px) {
   .search-bar {
     width: 30%;
-    display: block; /* Show the search bar */
+    display: block;
   }
 
   .search .fa-search {
-    display: none; /* Hide only the search icon */
+    display: none;
   }
 }
 @media (max-width: 400px) {
