@@ -3,7 +3,7 @@ const also_like_section = document.querySelector('.container');
 const produc23 = document.querySelector('.products');
 
 function getLastStoredItem(key) {
-  // Retrieve the data from localStorage and parse it
+  //  Retrieve the data from localStorage and parse it
   const items = JSON.parse(localStorage.getItem(key)) || [];
 
   if (items.length === 0) {
@@ -89,7 +89,6 @@ const markup = `
 description.insertAdjacentHTML('afterend', markup);
 
 const getsize = document.querySelector('.size-options');
-console.log(getsize);
 getsize.addEventListener('click', function (e) {
   if (e.target.classList.contains('size')) {
     const restelemnts = document.querySelectorAll('.size');
@@ -141,6 +140,7 @@ window.addEventListener('click', function (e) {
       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
       items.push(productinfo);
       localStorage.setItem('cartitems', JSON.stringify(items));
+      this.window.location.reload();
     }
   }
 });
@@ -187,6 +187,7 @@ const products = async function (id) {
               <span class="product-old-price">$279</span>
               <span class="product-discount">30% OFF</span>
             </div>
+            <button class="add-to-cart">Add to Cart</button>
             <div class="desc" style="display: none;">${data.description}</div>
           </div>
     `;
@@ -268,7 +269,6 @@ window.addEventListener('click', function (e) {
 
 const datafor_decription = getFirstStoredItem('imagedata');
 console.log('Last stored item:', datafor_decription);
-
 // window.addEventListener('click', function (e) {
 //   if (e.target.closest('.product img')) {
 //     const markup2 = `
@@ -346,3 +346,26 @@ console.log('Last stored item:', datafor_decription);
 const cartnums = document.querySelector('.numsitems');
 const numsofcart = JSON.parse(localStorage.getItem('cartitems')).length;
 console.log((cartnums.textContent = numsofcart));
+
+// window.addEventListener('click', function (e) {
+//   if (e.target.classList.contains('add-to-cart')) {
+//     const clickbutton = e.target;
+//     const productcard = clickbutton.closest('.product-card');
+//     if (productcard) {
+//       const producttitle =
+//         productcard.querySelector('.product-title').textContent;
+//       const productimage = productcard.querySelector('img').src;
+//       const productprice = productcard.querySelector('.curr-price').textContent;
+//       const productinfo = {
+//         title: producttitle,
+//         image: productimage,
+//         price: productprice,
+//       };
+//       console.log(imageinfo);
+//       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
+//       items.push(productinfo);
+//       localStorage.setItem('cartitems', JSON.stringify(items));
+//       this.window.location.reload();
+//     }
+//   }
+// });

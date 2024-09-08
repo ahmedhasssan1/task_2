@@ -14,7 +14,6 @@ let [getall_cart] = allcart('cartitems');
 let stordeitems = JSON.parse(localStorage.getItem('cartitems')) || [];
 let numberitems = stordeitems.length;
 for (let i = 0; i < numberitems; i++) {
-  console.log('asf');
   let getall_cart = stordeitems[i];
   const markup = ` 
       <div class="cart-item">
@@ -50,8 +49,8 @@ function totolprice() {
     let result = /\d+/g;
     Subtotal += parseInt(getall_cart.price.match(result));
   }
-  let discout = (Subtotal * 25) / 100;
-  total = Subtotal + (-117 + 15);
+  let discout = Subtotal * (25 / 100);
+  total = Subtotal - (discout + 15);
   const markup2 = ` 
        <h2>Order Summary</h2>
         <p>Subtotal <span>${Subtotal}</span></p>
@@ -86,6 +85,7 @@ document.querySelector('.cart-items').addEventListener('click', function (e) {
         '.cart-item-details p'
       ).textContent;
       updatedlocalstorage(carttitle);
+      window.location.reload();
     }
   }
 });
@@ -95,28 +95,43 @@ function updatedlocalstorage(carttitle) {
   localStorage.setItem('cartitems', JSON.stringify(stordeitems));
   console.log('storeditems', storeditems);
 }
+// Select all quantity controls in the cart
+document.querySelectorAll('.cart-item-quantity').forEach((count) => {
+  count.addEventListener('click', function (e) {
+    if (e.target.classList.contains('decrease')) {
+      // e.preventDefault();
+      let spanElement = e.target
+        .closest('.cart-item-quantity')
+        .querySelector('span');
 
-const count = document.querySelector('.cart-item-quantity');
-count.addEventListener('click', function (e) {
-  if (e.target.classList.contains('decrease')) {
-    let spanElement = e.target
-      .closest('.cart-item-quantity')
-      .querySelector('span'); // Access the span element directly
+      if (spanElement) {
+        let currentValue = parseInt(spanElement.textContent, 10);
+        if (currentValue > 1) {
+          spanElement.textContent = currentValue - 1;
+        } else if (currentValue >= 0) {
+          window.location.reload();
+          // Remove the cart item if the quantity is zero
+          const item = e.target.closest('.cart-item');
+          let cartItemTitle = item.querySelector('.title').textContent;
+          item.remove();
 
-    if (spanElement) {
-      let currentValue = parseInt(spanElement.textContent, 10); // Parse the text content as an integer
-      if (currentValue > 0) {
-        spanElement.textContent = currentValue - 1; // Update the text content
+          // Update localStorage
+          let storeditems = JSON.parse(localStorage.getItem('cartitems')) || [];
+          storeditems = storeditems.filter(
+            (cartItem) => cartItem.title !== cartItemTitle
+          );
+          localStorage.setItem('cartitems', JSON.stringify(storeditems));
+        }
+      }
+    } else if (e.target.classList.contains('increase')) {
+      let spanElement = e.target
+        .closest('.cart-item-quantity')
+        .querySelector('span');
+
+      if (spanElement) {
+        let currentValue = parseInt(spanElement.textContent, 10);
+        spanElement.textContent = currentValue + 1;
       }
     }
-  } else if (e.target.classList.contains('increase')) {
-    let spanElement = e.target
-      .closest('.cart-item-quantity')
-      .querySelector('span'); // Access the span element directly
-
-    if (spanElement) {
-      let currentValue = parseInt(spanElement.textContent, 10); // Parse the text content as an integer
-      spanElement.textContent = currentValue + 1; // Update the text content
-    }
-  }
+  });
 });

@@ -40,7 +40,7 @@ const products = async function (id) {
       </div>
     `;
     if (newarrivalContainer) {
-      newarrivalContainer.insertAdjacentHTML('beforeend', markup); // Use 'beforeend' to append to the end of the container
+      newarrivalContainer.insertAdjacentHTML('beforeend', markup);
     } else {
       console.error('Container does not exist');
     }
@@ -70,7 +70,6 @@ viewallbutton1.addEventListener('click', function () {
         // Clear previous products if needed
         newarrivalContainer.innerHTML = '';
 
-        // Iterate through each product and generate markup
         data.forEach((product) => {
           let stars2 = '';
           for (let i = 0; i < Math.round(product.rating.rate); i++) {
@@ -197,7 +196,6 @@ viewallbutton2.addEventListener('click', function () {
         // Clear previous products if needed
         topsellingSection.innerHTML = '';
 
-        // Iterate through each product and generate markup
         data.forEach((product) => {
           let stars = '';
           for (let i = 0; i < Math.round(product.rating.rate); i++) {
@@ -228,7 +226,6 @@ viewallbutton2.addEventListener('click', function () {
             </div>
           `;
 
-            // Append the product card to the container
             if (topsellingSection) {
               topsellingSection.insertAdjacentHTML('afterbegin', markup3);
             } else {
@@ -272,38 +269,11 @@ window.addEventListener('click', function (e) {
       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
       items.push(productinfo);
       localStorage.setItem('cartitems', JSON.stringify(items));
+      this.window.location.reload();
     }
   }
 });
-// console.log(window.localStorage.getItem('cartitems', productinfo));
 
-// function updateTransform() {
-//   const width = testimonials.children[0].offsetWidth + 20; // 20 is the margin
-//   testimonials.style.transform = `translateX(-${currentIndex * width}px)`;
-// }
-// const testimonials = document.querySelector('.testimonials');
-// const prev = document.getElementById('prev');
-// const next = document.getElementById('next');
-// let currentIndex = 0;
-
-// prev.addEventListener('click', () => {
-//   if (currentIndex > 0) {
-//     currentIndex--;
-//     updateTransform();
-//   }
-// });
-
-// next.addEventListener('click', () => {
-//   if (currentIndex < testimonials.children.length - 1) {
-//     currentIndex++;
-//     updateTransform();
-//   }
-// });
-
-// function updateTransform() {
-//   const width = testimonials.children[0].offsetWidth + 20; // 20 is the margin
-//   testimonials.style.transform = `translateX(-${currentIndex * width}px)`;
-// }
 const descclass = document.querySelector('.desc');
 window.addEventListener('click', function (e) {
   descclass.style.display = 'none';
@@ -353,25 +323,6 @@ sliders.forEach((s, i) => {
   s.style.transform = `translateX(${i * 10}%)`; // Position each review next to each other
 });
 
-// rightbtn.addEventListener('click', function () {
-//   if (curslide == count) {
-//     curslide = 0;
-//   } else curslide++;
-//   sliders.forEach((s, i) => {
-//     s.style.transform = `translateX(${(i - curslide) * 20}%)`; // Move each review card to the left
-//   });
-// });
-
-// sliders.forEach((s, i) => {
-//   s.style.transform = `translateX(${i * 10}%)`; // Position each review next to each other
-// });
-
-// leftbtn.addEventListener('click', function () {
-//   curslide--;
-//   sliders.forEach((s, i) => {
-//     s.style.transform = `translateX(${(i - curslide) * 20}%)`; // Move each review card to the left
-//   });
-// });
 const gotoslide = function (slide) {
   sliders.forEach((s, i) => {
     s.style.transform = `translateX(${(i - slide) * 15}%)`; // Move each review card to the left
