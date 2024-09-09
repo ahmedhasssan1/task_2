@@ -326,7 +326,7 @@ nav ul li a {
   border-radius: 8px;
   padding: 16px;
   /* background-color: #fff; */
-  transition: transform 0.3s, box-shadow 0.3s;
+  /* transition: transform 0.3s, box-shadow 0.3s; */
 }
 
 .product-card:hover {

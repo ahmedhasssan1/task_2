@@ -15,9 +15,9 @@ function getLastStoredItem(key) {
 
 // Example usage
 const getimagedesc = getLastStoredItem('imagedata');
-console.log(getimagedesc);
+
 const markup = `
-    <div class="product-page">
+    <div class="product-page" data_id=${getimagedesc.id}>
       <div class="container2">
         <div class="sidebar2">
           <img
@@ -128,6 +128,7 @@ window.addEventListener('click', function (e) {
     const productcard = clickbutton.closest('.product-page');
     if (productcard) {
       const producttitle = productcard.querySelector('h1').textContent;
+      const productid2 = productcard.getAttribute('data_id');
       const productimage = productcard.querySelector('.sidebar2 img').src;
       const productprice =
         productcard.querySelector('.current-price').textContent;
@@ -135,6 +136,7 @@ window.addEventListener('click', function (e) {
         title: producttitle,
         image: productimage,
         price: productprice,
+        id: productid2,
       };
       console.log(productinfo);
       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
@@ -162,12 +164,14 @@ const products = async function (id) {
     const res = await fetch(`https://fakestoreapi.com/products/${id}`);
 
     const data = await res.json();
+
     let stars = '';
     for (let i = 0; i < Math.round(data.rating.rate); i++) {
       stars += '⭐';
     }
+
     const markup = `
-          <div class="product2">
+          <div class="product2" data_id=${data.id}>
             <a>
             <img
               alt="Polo with Contrast Trims"
@@ -208,41 +212,41 @@ window.addEventListener('click', function (e) {
   // Check if the clicked element is an image inside the product class
   if (e.target.closest('.product2 img')) {
     console.log('Image clicked');
-  }
 
-  const clickbutton = e.target;
-  const productcard = clickbutton.closest('.product2'); // Change to .product to target individual product
+    const clickbutton = e.target;
+    const productcard = clickbutton.closest('.product2'); // Change to .product to target individual product
 
-  if (productcard) {
-    // Get product description, title, image, and price
-    const productdesc = productcard.querySelector('.desc')
-      ? productcard.querySelector('.desc').textContent.trim()
-      : 'No description available';
-    const producttitle = productcard
-      .querySelector('.product-title')
-      .textContent.trim();
-    const productimage = productcard.querySelector('img').src; // Select img inside the product card
-    const productprice = productcard
-      .querySelector('.curr-price')
-      .textContent.trim();
+    if (productcard) {
+      // Get product description, title, image, and price
+      const productdesc = productcard.querySelector('.desc')
+        ? productcard.querySelector('.desc').textContent.trim()
+        : 'No description available';
+      const producttitle = productcard
+        .querySelector('.product-title')
+        .textContent.trim();
+      const productimage = productcard.querySelector('img').src; // Select img inside the product card
+      const productprice = productcard
+        .querySelector('.curr-price')
+        .textContent.trim();
 
-    // Create an object to store in localStorage
-    const imageinfo = {
-      image: productimage,
-      title: producttitle,
-      price: productprice,
-      description: productdesc,
-    };
-    console.log(imageinfo);
+      // Create an object to store in localStorage
+      const imageinfo = {
+        image: productimage,
+        title: producttitle,
+        price: productprice,
+        description: productdesc,
+      };
+      console.log(imageinfo);
 
-    let productsArray = JSON.parse(localStorage.getItem('imagedata'));
+      let productsArray = JSON.parse(localStorage.getItem('imagedata'));
 
-    // Push the new product object into the array
-    productsArray.push(imageinfo);
-    // Save the updated array back to localStorage
-    localStorage.setItem('imagedata', JSON.stringify(productsArray));
+      // Push the new product object into the array
+      productsArray.push(imageinfo);
+      // Save the updated array back to localStorage
+      localStorage.setItem('imagedata', JSON.stringify(productsArray));
 
-    console.log('Product added:', productsArray);
+      console.log('Product added:', productsArray);
+    }
   }
 });
 function getFirstStoredItem(key) {
@@ -354,11 +358,13 @@ window.addEventListener('click', function (e) {
       const producttitle =
         productcard.querySelector('.product-title').textContent;
       const productimage = productcard.querySelector('img').src;
+      const productid = productcard.getAttribute('data_id');
       const productprice = productcard.querySelector('.curr-price').textContent;
       const productinfo = {
         title: producttitle,
         image: productimage,
         price: productprice,
+        id: productid,
       };
       console.log(productinfo);
       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];

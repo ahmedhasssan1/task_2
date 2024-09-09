@@ -16,7 +16,7 @@ let numberitems = stordeitems.length;
 for (let i = 0; i < numberitems; i++) {
   let getall_cart = stordeitems[i];
   const markup = ` 
-      <div class="cart-item">
+      <div class="cart-item" data_id=${getall_cart.id}>
          <img src="${getall_cart.image}" alt="Gradient Graphic T-shirt" />
          <div class="cart-item-details">
            <p class="title">${getall_cart.title}</p>
@@ -37,9 +37,10 @@ for (let i = 0; i < numberitems; i++) {
     `;
   cart_section.insertAdjacentHTML('beforeend', markup);
 }
-document.querySelector('.remove1').addEventListener('click', function () {
-  location.reload();
-});
+
+// document.querySelector('.remove1').addEventListener('click', function () {
+//   location.reload();
+// });
 function totolprice() {
   let Subtotal = 0;
   let total = 0;
@@ -50,7 +51,7 @@ function totolprice() {
     Subtotal += parseInt(getall_cart.price.match(result));
   }
   let discout = Subtotal * (25 / 100);
-  total = Subtotal - (discout + 15);
+  total = Subtotal + (-discout + 15);
   const markup2 = ` 
        <h2>Order Summary</h2>
         <p>Subtotal <span>${Subtotal}</span></p>
@@ -69,33 +70,31 @@ function totolprice() {
   order_summary.insertAdjacentHTML('beforeend', markup2);
 }
 totolprice();
-// remove1.addEventListener('click', function (e) {
-//   const cartitem = e.target.closest('.cart-items');
-//   if (cartitem) {
-//     cartitem.remove();
-//   }
-// });
-// Attach event listener to a common parent element, such as the cart section
-document.querySelector('.cart-items').addEventListener('click', function (e) {
-  if (e.target.matches('.cart-item-remove img')) {
+
+document.querySelectorAll('.cart-item-remove img').forEach((removeBtn) => {
+  removeBtn.addEventListener('click', function (e) {
     const cartItem = e.target.closest('.cart-item');
     if (cartItem) {
-      cartItem.remove(); // Remove the cart item
-      const carttitle = cartItem.querySelector(
-        '.cart-item-details p'
-      ).textContent;
-      updatedlocalstorage(carttitle);
-      window.location.reload();
+      const cartid = cartItem.getAttribute('data_id'); // Get the ID of the clicked item
+      cartItem.remove(); // Remove the clicked item from the DOM
+      updatedlocalstorage(cartid); // Update local storage
     }
-  }
+  });
 });
-function updatedlocalstorage(carttitle) {
+
+function updatedlocalstorage(cartid) {
+  // Retrieve current items from local storage
   let storeditems = JSON.parse(localStorage.getItem('cartitems')) || [];
-  stordeitems = stordeitems.filter((item) => item.title !== carttitle);
-  localStorage.setItem('cartitems', JSON.stringify(stordeitems));
-  console.log('storeditems', storeditems);
+
+  // Filter out the item with the matching ID
+  storeditems = storeditems.filter((item) => item.id !== cartid);
+
+  // Save the updated items back to local storage
+  localStorage.setItem('cartitems', JSON.stringify(storeditems));
+
+  console.log('Updated stored items:', storeditems);
 }
-// Select all quantity controls in the cart
+
 document.querySelectorAll('.cart-item-quantity').forEach((count) => {
   count.addEventListener('click', function (e) {
     if (e.target.classList.contains('decrease')) {

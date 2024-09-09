@@ -16,7 +16,7 @@ const products = async function (id) {
       stars += '⭐';
     }
     const markup = `
-      <div class="product-card">
+      <div class="product-card" data_id=${data.id}>
         <div class="product-image">
           <a href="descriptionpage.html">
             <img src="${data.image}" height="150" width="200" alt="${data.title}" />
@@ -58,7 +58,7 @@ let isproductvisible = false;
 let initialProducts = newarrivalContainer.innerHTML;
 viewallbutton1.addEventListener('click', function () {
   if (isproductvisible) {
-    newarrivalContainer.innerHTML = initialProducts; // Restore initial products
+    newarrivalContainer.innerHTML = ''; // Restore initial products
     isproductvisible = false;
     viewallbutton1.textContent = 'view all';
   } else {
@@ -77,7 +77,7 @@ viewallbutton1.addEventListener('click', function () {
           }
 
           const markup = `
-            <div class="product-card">
+            <div class="product-card" data_id=${product.id}>
               <div class="product-image">
                 <a href="descriptionpage.html">
                   <img src="${product.image}" alt="${product.title}" />
@@ -114,20 +114,20 @@ viewallbutton1.addEventListener('click', function () {
       }
     };
     isproductvisible = true;
-    viewallbutton1.textContent = 'hide back';
+    viewallbutton1.textContent = 'hide all';
 
     fetchAllProducts();
   }
 });
 
 viewallbutton1.addEventListener('click', function () {
-  if ((viewallbutton1.textContent = 'hide back')) {
+  if ((viewallbutton1.textContent = 'hide all')) {
     const productIds = [1, 2, 3, 4];
     productIds.forEach((id) => products(id));
     viewallbutton1.textContent = 'hide all';
   }
 });
-viewallbutton1.textContent = 'view all';
+viewallbutton1.textContent = 'hide all';
 
 const topselling = async function () {
   try {
@@ -138,7 +138,7 @@ const topselling = async function () {
     data.forEach((product) => {
       if (product.rating.rate > 4.5 && count < 4) {
         let markup2 = `
-          <div class="product-card">
+          <div class="product-card" data_id=${product.id}>
             <div class="product-image">
               <a href="descriptionpage.html">
                 <img src="${product.image}" height="200" width="200" alt="${
@@ -203,7 +203,7 @@ viewallbutton2.addEventListener('click', function () {
           }
           if (product.rating.rate > 4.5) {
             const markup3 = `
-            <div class="product-card">
+            <div class="product-card" data_id=${data.id}>
               <div class="product-image">
                 <img src="${product.image}" height="200" width="200"   alt="${product.title}" />
               </div>
@@ -257,11 +257,14 @@ window.addEventListener('click', function (e) {
     const clickbutton = e.target;
     const productcard = clickbutton.closest('.product-card');
     if (productcard) {
+      const productid2 = productcard.getAttribute('data_id');
+
       const producttitle = productcard.querySelector('h4').textContent;
       const productimage = productcard.querySelector('.product-image img').src;
       const productprice =
         productcard.querySelector('.current-price').textContent;
       const productinfo = {
+        id: productid2,
         title: producttitle,
         image: productimage,
         price: productprice,
@@ -290,10 +293,12 @@ window.addEventListener('click', function (e) {
       ? productcard.querySelector('.desc').textContent
       : 'No description available';
     const producttitle = productcard.querySelector('h4').textContent;
+    const productid2 = productcard.getAttribute('data_id');
     const productimage = productcard.querySelector('.product-image img').src;
     const productprice =
       productcard.querySelector('.current-price').textContent;
     const imageinfo = {
+      productid2,
       image: productimage,
       title: producttitle,
       price: productprice,
