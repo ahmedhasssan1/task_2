@@ -167,7 +167,7 @@ const products = async function (id) {
       stars += '⭐';
     }
     const markup = `
-          <div class="product">
+          <div class="product2">
             <a>
             <img
               alt="Polo with Contrast Trims"
@@ -187,7 +187,7 @@ const products = async function (id) {
               <span class="product-old-price">$279</span>
               <span class="product-discount">30% OFF</span>
             </div>
-            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart2">Add to Cart</button>
             <div class="desc" style="display: none;">${data.description}</div>
           </div>
     `;
@@ -206,12 +206,12 @@ productIds.forEach((id) => products(id));
 
 window.addEventListener('click', function (e) {
   // Check if the clicked element is an image inside the product class
-  if (e.target.closest('.product img')) {
+  if (e.target.closest('.product2 img')) {
     console.log('Image clicked');
   }
 
   const clickbutton = e.target;
-  const productcard = clickbutton.closest('.product'); // Change to .product to target individual product
+  const productcard = clickbutton.closest('.product2'); // Change to .product to target individual product
 
   if (productcard) {
     // Get product description, title, image, and price
@@ -249,9 +249,8 @@ function getFirstStoredItem(key) {
   // Retrieve the data from localStorage and parse it
   const items2 = JSON.parse(localStorage.getItem(key)) || [];
 
-  // Check if the array is empty
   if (items2.length === 0) {
-    return null; // Return null if no data is found
+    return null;
   }
 
   // Return the last item
@@ -347,25 +346,36 @@ const cartnums = document.querySelector('.numsitems');
 const numsofcart = JSON.parse(localStorage.getItem('cartitems')).length;
 console.log((cartnums.textContent = numsofcart));
 
-// window.addEventListener('click', function (e) {
-//   if (e.target.classList.contains('add-to-cart')) {
-//     const clickbutton = e.target;
-//     const productcard = clickbutton.closest('.product-card');
-//     if (productcard) {
-//       const producttitle =
-//         productcard.querySelector('.product-title').textContent;
-//       const productimage = productcard.querySelector('img').src;
-//       const productprice = productcard.querySelector('.curr-price').textContent;
-//       const productinfo = {
-//         title: producttitle,
-//         image: productimage,
-//         price: productprice,
-//       };
-//       console.log(imageinfo);
-//       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
-//       items.push(productinfo);
-//       localStorage.setItem('cartitems', JSON.stringify(items));
-//       this.window.location.reload();
-//     }
-//   }
-// });
+window.addEventListener('click', function (e) {
+  if (e.target.classList.contains('add-to-cart2')) {
+    const clickbutton = e.target;
+    const productcard = clickbutton.closest('.product2');
+    if (productcard) {
+      const producttitle =
+        productcard.querySelector('.product-title').textContent;
+      const productimage = productcard.querySelector('img').src;
+      const productprice = productcard.querySelector('.curr-price').textContent;
+      const productinfo = {
+        title: producttitle,
+        image: productimage,
+        price: productprice,
+      };
+      console.log(productinfo);
+      let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
+      items.push(productinfo);
+      localStorage.setItem('cartitems', JSON.stringify(items));
+    }
+  }
+});
+const select_section = document.getElementById('review1');
+const btn_view_review = document.querySelector('.btnnreview');
+
+btn_view_review.addEventListener('click', function () {
+  if (select_section.style.display === 'none') {
+    select_section.style.display = 'block';
+    btn_view_review.textContent = 'hide review';
+  } else {
+    select_section.style.display = 'none';
+    btn_view_review.textContent = 'view more comments ';
+  }
+});
