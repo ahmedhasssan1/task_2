@@ -325,7 +325,7 @@ const count = sliders.length;
 
 // Set up each slider's initial position
 sliders.forEach((s, i) => {
-  s.style.transform = `translateX(${i * 10}%)`; // Position each review next to each other
+  s.style.transform = `translateX(${i * 10}%)`;
 });
 
 const gotoslide = function (slide) {

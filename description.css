@@ -50,10 +50,11 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   background-color: #e4e4e4;
+  width: 30rem;
 }
-@media (min-width: 768px) {
+@media (max-width: 920px) {
   .header .search input {
-    width: 30rem;
+    width: 10rem;
   }
 }
 
@@ -273,6 +274,9 @@ body {
   font-size: 18px;
   font-weight: 700;
   color: #000;
+}
+.alsoimg {
+  background-color: #7a6868;
 }
 .related-products .product2 .price .original-price {
   font-size: 14px;
@@ -591,6 +595,7 @@ footer {
 
 .payment-icons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
@@ -667,7 +672,7 @@ footer {
   border: 1px solid #ddd;
 }
 .main-image img {
-  width: 300px;
+  width: 200px;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
@@ -708,6 +713,17 @@ footer {
 
 .write-review-btn:hover {
   background-color: #0056b3;
+}
+@media (max-width: 479px) {
+  .product2 {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    justify-content: space-around;
+    padding: 14px;
+    width: 45px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside each product */
+  }
 }
 
 @media (max-width: 765px) {
@@ -789,6 +805,14 @@ footer {
 
   .footer-section {
     margin-bottom: 20px;
+  }
+  .product-discount {
+    color: #ff0000;
+    font-size: 14px;
+    display: none;
+  }
+  .product-old-price {
+    display: none;
   }
 
   .footer-section h4 {
@@ -1064,15 +1088,17 @@ footer {
 
   .products {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 106%;
     gap: 14px;
     flex-wrap: wrap;
   }
   .product2 {
     background-color: #f9f9f9;
     border-radius: 10px;
-    padding: 20px;
-    width: 100px;
+    justify-content: space-around;
+    padding: 14px;
+    width: 109px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center text inside each product */
   }
@@ -1125,7 +1151,8 @@ footer {
   .btnnreview {
     background-color: #edecec;
     color: rgb(0, 0, 0);
-    border: none;
+    border-radius: 20px;
+
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -1141,4 +1168,16 @@ footer {
   padding: 9px 13px;
   border-radius: 38px;
   cursor: pointer;
+}
+@media (max-width: 100px) and (min-width: 590) {
+  .btnnreview {
+    background-color: #edecec;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin-left: 520px;
+  }
 }

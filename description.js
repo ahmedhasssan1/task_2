@@ -174,6 +174,7 @@ const products = async function (id) {
           <div class="product2" data_id=${data.id}>
             <a>
             <img
+              class="alsoimg"
               alt="Polo with Contrast Trims"
               height="200"
               src="${data.image}"
@@ -272,80 +273,7 @@ window.addEventListener('click', function (e) {
 
 const datafor_decription = getFirstStoredItem('imagedata');
 console.log('Last stored item:', datafor_decription);
-// window.addEventListener('click', function (e) {
-//   if (e.target.closest('.product img')) {
-//     const markup2 = `
-//     <div class="product-page">
-//       <div class="container2">
-//         <div class="sidebar2">
-//           <img
-//             alt="T-shirt front view"
-//             height="100"
-//             src="${datafor_decription.image2}"
-//             width="100"
-//           />
-//           <img
-//             alt="T-shirt back view"
-//             height="100"
-//             src="${datafor_decription.image2}"
-//             width="100"
-//           />
-//           <img
-//             alt="T-shirt side view"
-//             height="100"
-//             src="${datafor_decription.image2}"
-//             width="100"
-//           />
-//         </div>
-//         <div class="main-image">
-//           <img
-//             alt="Main T-shirt image"
-//             height="300"
-//             src="${datafor_decription.image2}"
-//             width="300"
-//           />
-//         </div>
-//       </div>
-//       <div class="product-details">
-//         <h1>${datafor_decription.title2}</h1>
-//         <div class="rating">
-//           <i class="fas fa-star">${'⭐'}</i>
-//           <i class="fas fa-star">${'⭐'}</i>
-//           <i class="fas fa-star">${'⭐'}</i>
-//           <i class="fas fa-star-half-alt"></i>
-//           <span>4.5/5</span>
-//         </div>
-//         <div class="price">
-//           <span class="current-price">${datafor_decription.price2}</span>
-//           <span class="original-price">$300</span>
-//           <span class="discount">-40%</span>
-//         </div>
-//         <div class="description">
-//          ${datafor_decription.description2 || 'no dres avalibe'}
-//         </div>
-//         <div class="color-options">
-//           <div class="color" style="background-color: #4a4a4a"></div>
-//           <div class="color" style="background-color: #2a2a2a"></div>
-//           <div class="color" style="background-color: #1a1a1a"></div>
-//         </div>
-//         <div class="size-options">
-//           <div class="size">Small</div>
-//           <div class="size">Medium</div>
-//           <div class="size ">Large</div>
-//           <div class="size">X-Large</div>
-//         </div>
-//         <div class="quantity">
-//           <button class="decrease">-</button>
-//           <input type="text" value="1" />
-//           <button class="increase">+</button>
-//         </div>
-//         <button class="add-to-cart">Add to Cart</button>
-//       </div>
-//     </div>
-// `;
-//     description.insertAdjacentHTML('beforeend', markup2);
-//   }
-// });
+
 const cartnums = document.querySelector('.numsitems');
 const numsofcart = JSON.parse(localStorage.getItem('cartitems')).length;
 console.log((cartnums.textContent = numsofcart));

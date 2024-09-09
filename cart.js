@@ -26,7 +26,7 @@ for (let i = 0; i < numberitems; i++) {
          <div class="cart-item-price">${getall_cart.price}</div>
          <div class="cart-item-quantity">
            <button class="decrease">-</button>
-           <span>1</span>
+           <span id="number-span">1</span>
            <button class="increase">+</button>
          </div>
          <div class="cart-item-remove">
@@ -38,9 +38,15 @@ for (let i = 0; i < numberitems; i++) {
   cart_section.insertAdjacentHTML('beforeend', markup);
 }
 
-// document.querySelector('.remove1').addEventListener('click', function () {
-//   location.reload();
-// });
+const spanElement = document.querySelector('#number-span');
+
+// Get the text content
+const textContent = spanElement.textContent;
+
+// Convert the text content to a number
+const numberValue = parseInt(textContent, 10);
+console.log(numberValue); // Use parseFloat() if the number might be a float
+
 function totolprice() {
   let Subtotal = 0;
   let total = 0;
@@ -48,7 +54,7 @@ function totolprice() {
   for (let i = 0; i < numberitems; i++) {
     let getall_cart = stordeitems[i];
     let result = /\d+/g;
-    Subtotal += parseInt(getall_cart.price.match(result));
+    Subtotal += parseInt(getall_cart.price.match(result)) * numberValue;
   }
   let discout = Subtotal * (25 / 100);
   total = Subtotal + (-discout + 15);
@@ -75,26 +81,22 @@ document.querySelectorAll('.cart-item-remove img').forEach((removeBtn) => {
   removeBtn.addEventListener('click', function (e) {
     const cartItem = e.target.closest('.cart-item');
     if (cartItem) {
-      const cartid = cartItem.getAttribute('data_id'); // Get the ID of the clicked item
-      cartItem.remove(); // Remove the clicked item from the DOM
-      updatedlocalstorage(cartid); // Update local storage
+      const cartid = cartItem.getAttribute('data_id');
+      cartItem.remove();
+      updatedlocalstorage(cartid);
     }
   });
 });
 
 function updatedlocalstorage(cartid) {
-  // Retrieve current items from local storage
   let storeditems = JSON.parse(localStorage.getItem('cartitems')) || [];
 
-  // Filter out the item with the matching ID
   storeditems = storeditems.filter((item) => item.id !== cartid);
 
-  // Save the updated items back to local storage
   localStorage.setItem('cartitems', JSON.stringify(storeditems));
 
   console.log('Updated stored items:', storeditems);
 }
-
 document.querySelectorAll('.cart-item-quantity').forEach((count) => {
   count.addEventListener('click', function (e) {
     if (e.target.classList.contains('decrease')) {
@@ -108,7 +110,7 @@ document.querySelectorAll('.cart-item-quantity').forEach((count) => {
         if (currentValue > 1) {
           spanElement.textContent = currentValue - 1;
         } else if (currentValue >= 0) {
-          window.location.reload();
+          // window.location.reload();
           // Remove the cart item if the quantity is zero
           const item = e.target.closest('.cart-item');
           let cartItemTitle = item.querySelector('.title').textContent;
