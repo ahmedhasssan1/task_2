@@ -77,12 +77,12 @@ viewallbutton1.addEventListener('click', function () {
           }
 
           const markup = `
-            <div class="product-card" data_id=${product.id}>
+            <div class="product-card" data-id=${product.id}>
               <div class="product-image">
                 <a href="descriptionpage.html">
                   <img src="${product.image}" alt="${product.title}" />
                 </a>
-                </div>
+              </div>
               <div class="product-info">
                 <h4>${product.title}</h4>
                 <div class="product-price">
@@ -95,10 +95,9 @@ viewallbutton1.addEventListener('click', function () {
                 </div>
                 <button class="add-to-cart">Add to Cart</button>
               </div>
-               <div class="desc">
+              <div class="desc">
                 <a>${product.description}</a>
               </div>
-              
             </div>
           `;
 
@@ -113,6 +112,7 @@ viewallbutton1.addEventListener('click', function () {
         console.error('The error is', error);
       }
     };
+
     isproductvisible = true;
     viewallbutton1.textContent = 'hide all';
 
@@ -201,7 +201,7 @@ viewallbutton2.addEventListener('click', function () {
           for (let i = 0; i < Math.round(product.rating.rate); i++) {
             stars += '⭐';
           }
-          if (product.rating.rate > 4.5) {
+          if (product.rating.rate > 4.4) {
             const markup3 = `
             <div class="product-card" data_id=${data.id}>
               <div class="product-image">

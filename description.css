@@ -101,6 +101,17 @@ body {
   gap: 10px;
   margin: 10px 0;
 }
+.btnnreview {
+  background-color: #edecec;
+  color: rgb(0, 0, 0);
+  border-radius: 20px;
+
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  margin-left: 620px;
+}
 .product-details .price .current-price {
   font-size: 24px;
   font-weight: 700;
@@ -1161,6 +1172,20 @@ footer {
   }
 }
 
+@media (min-width: 900px) {
+  .btnnreview {
+    background-color: #edecec;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    margin-left: 630px;
+  }
+}
+
 .add-to-cart2 {
   background-color: #dbdbdb;
   color: #000000;
@@ -1169,7 +1194,7 @@ footer {
   border-radius: 38px;
   cursor: pointer;
 }
-@media (max-width: 100px) and (min-width: 590) {
+@media (max-width: 1300px) and (min-width: 700px) {
   .btnnreview {
     background-color: #edecec;
     color: rgb(0, 0, 0);
