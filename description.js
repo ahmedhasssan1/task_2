@@ -298,6 +298,7 @@ window.addEventListener('click', function (e) {
       let items = JSON.parse(this.localStorage.getItem('cartitems')) || [];
       items.push(productinfo);
       localStorage.setItem('cartitems', JSON.stringify(items));
+      this.window.location.reload();
     }
   }
 });

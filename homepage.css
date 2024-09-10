@@ -175,7 +175,7 @@ nav ul li a {
   background-color: #000;
   color: #fff;
   border: none;
-  width: 10rem;
+  width: 20rem;
   border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
@@ -761,7 +761,7 @@ footer {
 .header .search {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 .header .search input {
   padding: 5px 10px;
@@ -1242,15 +1242,15 @@ footer {
 } */
 @media (max-width: 440px) {
   .hero-text button {
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: #000;
     color: #fff;
     border: none;
-    width: 10rem;
+    width: 260px;
     border-radius: 30px;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 15px;
     margin-top: -900px;
   }
   .stats {

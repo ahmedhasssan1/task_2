@@ -127,7 +127,7 @@ viewallbutton1.addEventListener('click', function () {
     viewallbutton1.textContent = 'hide all';
   }
 });
-viewallbutton1.textContent = 'hide all';
+viewallbutton1.textContent = 'view all';
 
 const topselling = async function () {
   try {
@@ -201,20 +201,23 @@ viewallbutton2.addEventListener('click', function () {
           for (let i = 0; i < Math.round(product.rating.rate); i++) {
             stars += '⭐';
           }
-          if (product.rating.rate > 4.4) {
+          if (product.rating.rate > 4 && product.rating.count >= 400) {
             const markup3 = `
             <div class="product-card" data_id=${data.id}>
               <div class="product-image">
-                <img src="${product.image}" height="200" width="200"   alt="${product.title}" />
+                <img src="${product.image}" height="200" width="200"   alt="${
+              product.title
+            }" />
               </div>
               <div class="product-info">
                 <h4>${product.title}</h4>
                 <div class="product-price">
                   <span class="current-price">$${product.price}</span>
+                  <span> ${product.title}</span>
                   <span class="original-price">$150</span>
                 </div>
                 <div class="product-rating">
-                  <span>${stars}</span>
+                  <span>${'⭐'.repeat(Math.ceil(product.rating.rate))}</span>
                   <span class="reviews">(${product.rating.count} Reviews)</span>
                 </div>
                 <button class="add-to-cart">Add to Cart</button>

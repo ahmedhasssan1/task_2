@@ -81,7 +81,7 @@ document.querySelectorAll('.cart-item-remove img').forEach((removeBtn) => {
   removeBtn.addEventListener('click', function (e) {
     const cartItem = e.target.closest('.cart-item');
     if (cartItem) {
-      const cartid = cartItem.getAttribute('data_id');
+      let cartid = cartItem.getAttribute('data_id');
       cartItem.remove();
       updatedlocalstorage(cartid);
     }
