@@ -3,7 +3,6 @@ const also_like_section = document.querySelector('.container');
 const produc23 = document.querySelector('.products');
 
 function getLastStoredItem(key) {
-  //  Retrieve the data from localStorage and parse it
   const items = JSON.parse(localStorage.getItem(key)) || [];
 
   if (items.length === 0) {
@@ -13,7 +12,6 @@ function getLastStoredItem(key) {
   return items[items.length - 1];
 }
 
-// Example usage
 const getimagedesc = getLastStoredItem('imagedata');
 
 const markup = `
@@ -116,7 +114,6 @@ count.addEventListener('click', function (e) {
     let inputElement = e.target.closest('.quantity').querySelector('input');
     if (inputElement) {
       let currentValue = parseInt(inputElement.value, 10);
-      // Optional: Prevents the value from going below 0
       inputElement.value = currentValue + 1;
     }
   }
@@ -197,7 +194,7 @@ const products = async function (id) {
           </div>
     `;
     if (mightalsosec) {
-      mightalsosec.insertAdjacentHTML('beforeend', markup); // Use 'beforeend' to append to the end of the container
+      mightalsosec.insertAdjacentHTML('beforeend', markup);
     } else {
       console.error('Container does not exist');
     }
@@ -210,22 +207,20 @@ const productIds = [1, 2, 3, 4];
 productIds.forEach((id) => products(id));
 
 window.addEventListener('click', function (e) {
-  // Check if the clicked element is an image inside the product class
   if (e.target.closest('.product2 img')) {
     console.log('Image clicked');
 
     const clickbutton = e.target;
-    const productcard = clickbutton.closest('.product2'); // Change to .product to target individual product
+    const productcard = clickbutton.closest('.product2');
 
     if (productcard) {
-      // Get product description, title, image, and price
       const productdesc = productcard.querySelector('.desc')
         ? productcard.querySelector('.desc').textContent.trim()
         : 'No description available';
       const producttitle = productcard
         .querySelector('.product-title')
         .textContent.trim();
-      const productimage = productcard.querySelector('img').src; // Select img inside the product card
+      const productimage = productcard.querySelector('img').src;
       const productprice = productcard
         .querySelector('.curr-price')
         .textContent.trim();
@@ -243,7 +238,6 @@ window.addEventListener('click', function (e) {
 
       // Push the new product object into the array
       productsArray.push(imageinfo);
-      // Save the updated array back to localStorage
       localStorage.setItem('imagedata', JSON.stringify(productsArray));
 
       console.log('Product added:', productsArray);
@@ -251,14 +245,12 @@ window.addEventListener('click', function (e) {
   }
 });
 function getFirstStoredItem(key) {
-  // Retrieve the data from localStorage and parse it
   const items2 = JSON.parse(localStorage.getItem(key)) || [];
 
   if (items2.length === 0) {
     return null;
   }
 
-  // Return the last item
   return items2[items2.length - 1];
 }
 window.addEventListener('click', function (e) {

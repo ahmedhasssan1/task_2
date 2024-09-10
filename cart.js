@@ -40,12 +40,10 @@ for (let i = 0; i < numberitems; i++) {
 
 const spanElement = document.querySelector('#number-span');
 
-// Get the text content
 const textContent = spanElement.textContent;
 
-// Convert the text content to a number
 const numberValue = parseInt(textContent, 10);
-console.log(numberValue); // Use parseFloat() if the number might be a float
+console.log(numberValue);
 
 function totolprice() {
   let Subtotal = 0;
@@ -110,13 +108,11 @@ document.querySelectorAll('.cart-item-quantity').forEach((count) => {
         if (currentValue > 1) {
           spanElement.textContent = currentValue - 1;
         } else if (currentValue >= 0) {
-          // window.location.reload();
           // Remove the cart item if the quantity is zero
           const item = e.target.closest('.cart-item');
           let cartItemTitle = item.querySelector('.title').textContent;
           item.remove();
 
-          // Update localStorage
           let storeditems = JSON.parse(localStorage.getItem('cartitems')) || [];
           storeditems = storeditems.filter(
             (cartItem) => cartItem.title !== cartItemTitle

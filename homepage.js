@@ -9,7 +9,6 @@ const products = async function (id) {
     const res = await fetch(`https://fakestoreapi.com/products/${id}`);
 
     const data = await res.json();
-    // viewallbutton1.textContent = 'view all';
 
     let stars = '';
     for (let i = 0; i < Math.round(data.rating.rate); i++) {
@@ -53,12 +52,11 @@ const productIds = [1, 2, 3, 4];
 productIds.forEach((id) => products(id));
 // --------------------------------------------->
 
-// Store the initial four products
 let isproductvisible = false;
 let initialProducts = newarrivalContainer.innerHTML;
 viewallbutton1.addEventListener('click', function () {
   if (isproductvisible) {
-    newarrivalContainer.innerHTML = ''; // Restore initial products
+    newarrivalContainer.innerHTML = '';
     isproductvisible = false;
     viewallbutton1.textContent = 'view all';
   } else {
@@ -67,7 +65,6 @@ viewallbutton1.addEventListener('click', function () {
         const res = await fetch('https://fakestoreapi.com/products');
         const data = await res.json();
 
-        // Clear previous products if needed
         newarrivalContainer.innerHTML = '';
 
         data.forEach((product) => {
