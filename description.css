@@ -1193,7 +1193,14 @@ footer {
   padding: 9px 13px;
   border-radius: 38px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.add-to-cart2:hover {
+  background-color: #f4f3f3;
+  color: #000000;
+}
+
 @media (max-width: 1300px) and (min-width: 700px) {
   .btnnreview {
     background-color: #edecec;
