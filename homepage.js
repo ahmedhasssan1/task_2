@@ -43,7 +43,6 @@ const createProductMarkup = (product) => `
   </div>
 `;
 
-// Insert product markup into container
 const insertProducts = (container, products) => {
   container.innerHTML = products.map(createProductMarkup).join('');
 };
@@ -82,7 +81,6 @@ viewallButton1.addEventListener('click', async () => {
   isProductVisible = !isProductVisible;
 });
 
-// Fetch and display top-selling products
 const topselling = async () => {
   const res = await fetch('https://fakestoreapi.com/products');
   const products = await res.json();
@@ -90,7 +88,7 @@ const topselling = async () => {
   insertProducts(topsellingSection, topProducts);
 };
 
-topselling(); // Call on page load
+topselling();
 let isproductvisible2 = false;
 
 let isTopSellingVisible = false;
@@ -186,7 +184,7 @@ sliders.forEach((s, i) => {
 
 const gotoslide = function (slide) {
   sliders.forEach((s, i) => {
-    s.style.transform = `translateX(${(i - slide) * 15}%)`; // Move each review card to the left
+    s.style.transform = `translateX(${(i - slide) * 15}%)`;
   });
 };
 const nextslide = function () {
