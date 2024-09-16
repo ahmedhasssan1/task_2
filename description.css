@@ -531,7 +531,7 @@ footer {
 @media (min-width: 1000px) {
   .products {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 20px;
     flex-wrap: wrap;
   }

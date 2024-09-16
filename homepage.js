@@ -85,9 +85,8 @@ const topselling = async () => {
   const products = await res.json();
   const topProducts = products.filter((p) => p.rating.rate > 4.6);
 
-  // Function to insert a specific number of products based on screen width
   const updateProductDisplay = () => {
-    let numProducts = 4; // Default is 4 products
+    let numProducts = 4;
     if (window.matchMedia('(max-width: 425px)').matches) {
       numProducts = 2; // Show only 2 products when screen is <= 380px
     }
@@ -96,7 +95,6 @@ const topselling = async () => {
 
   updateProductDisplay();
 
-  // Add event listener to update the product display when the screen is resized
   window.addEventListener('resize', updateProductDisplay);
 };
 
