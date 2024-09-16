@@ -312,3 +312,27 @@ btn_view_review.addEventListener('click', function () {
     btn_view_review.textContent = 'view more comments ';
   }
 });
+
+const closebtn = document.getElementById('cancel');
+const sideicon = document.querySelector('.menu-icon');
+const sidebar = document.querySelector('.sidebar');
+const sidebarul = document.querySelector('.sidebar ul');
+
+// Function to open the sidebar
+function openSidebar() {
+  sidebar.style.display = 'block';
+  closebtn.style.display = 'block';
+  sidebarul.style.display = 'block';
+  sideicon.style.display = 'none'; // Hide the menu icon when the sidebar is open
+}
+
+// Function to close the sidebar
+function closeSidebar() {
+  sidebar.style.display = 'none';
+  closebtn.style.display = 'none';
+  sideicon.style.display = 'block'; // Show the menu icon when the sidebar is closed
+}
+
+// Add event listeners
+closebtn.addEventListener('click', closeSidebar);
+sideicon.addEventListener('click', openSidebar);

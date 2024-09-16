@@ -22,8 +22,9 @@ for (let i = 0; i < numberitems; i++) {
            <p class="title">${getall_cart.title}</p>
            <p>Size: Large</p>
            <p>Color: White</p>
+                    <div class="cart-item-price">${getall_cart.price}</div>
+
          </div>
-         <div class="cart-item-price">${getall_cart.price}</div>
          <div class="cart-item-quantity">
            <button class="decrease">-</button>
            <span id="number-span">1</span>
@@ -132,3 +133,24 @@ document.querySelectorAll('.cart-item-quantity').forEach((count) => {
     }
   });
 });
+const closebtn = document.getElementById('cancel');
+const sideicon = document.querySelector('.menu-icon');
+const sidebar = document.querySelector('.sidebar');
+
+// Function to open the sidebar
+function openSidebar() {
+  sidebar.style.display = 'block';
+  closebtn.style.display = 'block';
+  sideicon.style.display = 'none'; // Hide the menu icon when the sidebar is open
+}
+
+// Function to close the sidebar
+function closeSidebar() {
+  sidebar.style.display = 'none';
+  closebtn.style.display = 'none';
+  sideicon.style.display = 'block'; // Show the menu icon when the sidebar is closed
+}
+
+// Add event listeners
+closebtn.addEventListener('click', closeSidebar);
+sideicon.addEventListener('click', openSidebar);

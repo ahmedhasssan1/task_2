@@ -1338,6 +1338,12 @@ footer {
     right: -4px;
     margin-left: 153px;
   }
+  .title {
+    margin-left: 33px;
+    font-size: xx-large;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
   .reviews {
     padding: 15px;
     text-align: left;
@@ -1533,7 +1539,7 @@ footer {
     width: 175px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -1542,21 +1548,36 @@ footer {
     align-items: center;
     overflow: hidden;
   }
+
+  .products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll; /* Enable horizontal scrolling */
+    gap: 10px;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 0;
+    width: 100%; /* Ensure the container has a limited width */
+    scrollbar-width: thin; /* Optional: thin scrollbar for Firefox */
+  }
+
+  /* Ensure product items are wide enough to cause overflow */
+  .product2 {
+    justify-content: space-around;
+    padding: 14px;
+    width: 135px; /* Adjust the width so multiple items will overflow */
+    height: auto;
+    text-align: center;
+    flex-shrink: 0; /* Prevent items from shrinking */
+  }
+
   .product2 img {
     width: 113%;
     border-radius: 10px;
   }
-  .products {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; /* Prevents wrapping to keep items in a row */
-    overflow-x: auto; /* Allows horizontal scrolling */
-    gap: 10px; /* Space between product cards */
-    justify-content: flex-start; /* Align items to the start */
-    margin-left: 0; /* Adjust margins for better layout on small screens */
-    margin-top: 0;
-    padding-left: 0;
-  }
+
   .btnnreview {
     background-color: #edecec;
     color: rgb(0, 0, 0);
@@ -1567,14 +1588,8 @@ footer {
     cursor: pointer;
     margin-left: 60px;
   }
-  .product2 {
-    justify-content: space-around;
-    padding: 14px;
-    width: 135px;
-    height: auto;
-    text-align: center;
-  }
 }
+
 .product2 {
   justify-content: space-around;
   padding: 14px;
@@ -1714,7 +1729,7 @@ footer {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1026px) {
   .btnnreview {
     background-color: #edecec;
     color: rgb(0, 0, 0);
@@ -1723,11 +1738,35 @@ footer {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-
+    margin-bottom: 70px;
     margin-left: 630px;
   }
+  .title {
+    margin-left: 561px;
+    font-size: xx-large;
+    font-weight: 800;
+    margin-bottom: 44px;
+  }
 }
+@media (max-width: 1024px) and(min-width:990px) {
+  .btnnreview {
+    background-color: #edecec;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
 
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 70px;
+    margin-left: 630px;
+  }
+  .title {
+    margin-left: 561px;
+    font-size: xx-large;
+    font-weight: 800;
+    margin-bottom: 44px;
+  }
+}
 .add-to-cart2 {
   background-color: #dbdbdb;
   color: #000000;
@@ -1755,7 +1794,7 @@ footer {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1000px) {
   .btnnreview {
     background-color: #edecec;
     color: rgb(0, 0, 0);
@@ -1763,7 +1802,66 @@ footer {
     padding: 10px 50px;
     border-radius: 30px;
     cursor: pointer;
-    margin-left: 630px;
+    margin-left: 411px;
+    margin-bottom: 48px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  display: none;
+  width: 250px;
+  height: 100%;
+  background-color: #ffffff;
+}
+.sidebar ul {
+  display: none;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  line-height: 50px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid;
+}
+ul li:hover a {
+  padding-left: 30px;
+}
+
+#check {
+  display: none;
+}
+label #cancel {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+}
+label #cancel {
+  z-index: 1111;
+  left: 195px;
+  top: 70px;
+  font-size: 30px;
+  color: #bc1a1a;
+  padding: 4px 9px;
+}
+@media (max-width: 768px) and (min-width: 700px) {
+  #sideicon {
+    display: none;
+  }
+}
+@media (max-width: 1023px) and(min-width:1000px) {
+  .btnnreview {
+    background-color: #edecec;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 10px 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-left: 400px;
     margin-bottom: 48px;
   }
 }
