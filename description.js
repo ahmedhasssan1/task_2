@@ -63,23 +63,29 @@ const markup = `
         <div class="description">
          ${getimagedesc.description || 'no dres avalibe'}
         </div>
-        <div class="color-options">
+        <hr style="border: 1px solid #ddd; width: 100%;">
+        <a> color option</a>
+        <div class="color-options">  
           <div class="color" style="background-color: #4a4a4a"></div>
           <div class="color" style="background-color: #2a2a2a"></div>
           <div class="color" style="background-color: #1a1a1a"></div>
         </div>
+        <hr style="border: 1px solid #ddd; width: 100%;">
+        <a> choose size</a>
         <div class="size-options">
           <div class="size">Small</div>
           <div class="size">Medium</div>
           <div class="size ">Large</div>
           <div class="size">X-Large</div>
         </div>
+         <hr style="border: 1px solid #ddd; width: 100%;">
+
         <div class="quantity">
           <button class="decrease">-</button>
           <input type="text" value="1" />
           <button class="increase">+</button>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
-        <button class="add-to-cart">Add to Cart</button>
       </div>
     </div>
 `;
