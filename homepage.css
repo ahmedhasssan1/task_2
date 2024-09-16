@@ -279,35 +279,40 @@ nav ul li a {
 }
 @media (max-width: 920px) {
   .product-info h4 {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     margin: 1px 0;
     color: #000;
   }
 }
 .product-price {
-  font-size: 16px;
+  font-size: 11px;
   margin: 10px 0;
 }
 
 .product-price .current-price {
-  font-weight: bold;
+  font-weight: 900;
   color: #b9b8b8;
 }
 
 .product-price {
+  display: flex;
+  flex-direction: row;
   color: #777;
   margin-left: 10px;
 }
 .original-price {
   text-decoration: line-through;
-
   background-color: #ff33331a;
   color: rgb(216, 0, 0);
 }
 .product-rating {
   margin: 10px 0;
   font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
 .product-rating span {
@@ -317,7 +322,7 @@ nav ul li a {
 .product-rating .reviews {
   color: #777;
   font-size: 14px;
-  margin-left: 60px;
+  margin-left: 9px;
 }
 
 /* Button Styles */
@@ -393,16 +398,21 @@ nav ul li a {
 }
 
 .new-arrivals h3,
-.top-selling h3,
 .browse-by-style h3,
 .happy-customers h3 {
-  font-size: 28px;
+  font-size: 36px;
   margin-bottom: 30px;
+}
+.top-selling h3 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 900;
 }
 .new-arrival2 {
   margin-left: 43%;
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: 900;
+  font-size: 36px;
   margin-bottom: 30px;
 }
 .view-all-container {
@@ -761,6 +771,18 @@ footer {
   .header .search input {
     width: 50rem;
   }
+  .product-price {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .product-rating {
+    margin: 10px 20px;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
 }
 @media (max-width: 668px) and(min-width:235px) {
   .hero-text h2 {
@@ -1091,12 +1113,12 @@ footer {
 
     background-color: #7e7d7d;
   }
-  .product-card[data_id='1'],
+  /* .product-card[data_id='1'],
   .product-card[data_id='2'] {
     display: none;
-  }
+  } */
   .product-info {
-    text-align: center;
+    text-align: left;
   }
   .product-rating span {
     display: flex;
@@ -1105,27 +1127,45 @@ footer {
 
   .new-arrivals {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-around;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 32px;
+    justify-content: flex-start; /* Aligns items to the left */
     margin-left: -63px;
     align-content: flex-start;
-    align-items: stretch;
+    align-items: end;
     margin-top: -62px;
     padding-left: 60px;
+    flex-wrap: nowrap; /* Prevent wrapping for horizontal scrolling */
+  }
+
+  .new-arrivals .product-card {
+    flex: 0 0 auto; /* Prevent shrinking of the product card */
+    width: 200px; /* Set a consistent width for the product cards */
+  }
+  .product-info {
+    padding-top: 10px;
+    padding-left: 7px;
+    padding-right: 4px;
   }
   .products-grid,
   .testimonials {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-around;
+    overflow-x: scroll;
+    gap: 50px;
+    justify-content: flex-start; /* Use flex-start to align items at the start */
     margin-left: -63px;
     align-content: flex-start;
-    align-items: stretch;
+    align-items: end;
     margin-top: 7px;
     padding-left: 60px;
+    flex-wrap: nowrap; /* Prevent wrapping for horizontal scrolling */
   }
+
+  .product-card {
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 200px; /* Adjust to your design */
+  }
+
   .product-card {
     flex: 2 1 117px;
     max-width: 106px;
@@ -1161,7 +1201,7 @@ footer {
   }
   .product-rating span {
     width: 2px;
-    display: flex;
+    display: contents;
     flex-wrap: wrap;
     margin-left: -26px;
     align-items: center;
@@ -1170,7 +1210,7 @@ footer {
     padding: 9px 22px;
     background-color: #f5f5f5;
     width: 125px;
-    margin-left: -27px;
+    margin-left: -8px;
     color: #000000;
     border: none;
     border-radius: 5px;
@@ -2505,7 +2545,7 @@ footer {
     display: flex;
     flex-direction: row;
     color: #777;
-    margin-left: -5px;
+    margin-left: 76px;
   }
   .add-to-cart {
     padding: 13px 23px;

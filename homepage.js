@@ -27,20 +27,26 @@ const createProductMarkup = (product) => `
     </div>
     <div class="product-info">
       <h4>${product.title}</h4>
-      <div class="product-price">
-        <span class="current-price">$${product.price}</span>
-        <span class="original-price">$150</span>
-      </div>
       <div class="product-rating">
-        <span>${generateStars(product.rating.rate)}</span>
-        <span class="reviews">(${product.rating.count} Reviews)</span>
+        <span>${generateStars(
+          product.rating.rate
+        )}</span> <span class="reviews">(${product.rating.rate}/5)</span>
+
       </div>
+      <div class="product-price">
+        <span class="current-price">$${
+          product.price
+        } &nbsp; </span> <span class="original-price">$150</span>
+
+      </div>
+      
       <button class="add-to-cart">Add to Cart</button>
     </div>
     <div class="desc">
       <a>${product.description}</a>
     </div>
   </div>
+  
 `;
 
 const insertProducts = (container, products) => {
@@ -88,7 +94,7 @@ const topselling = async () => {
   const updateProductDisplay = () => {
     let numProducts = 4;
     if (window.matchMedia('(max-width: 425px)').matches) {
-      numProducts = 2; // Show only 2 products when screen is <= 380px
+      numProducts = 4; // Show only 2 products when screen is <= 380px
     }
     insertProducts(topsellingSection, topProducts.slice(0, numProducts));
   };

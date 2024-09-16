@@ -609,11 +609,6 @@ footer {
   flex-direction: row;
   flex-wrap: wrap;
 }
-@media (max-width: 550px) {
-  .product2:nth-child(n + 3) {
-    display: none;
-  }
-}
 
 .title {
   margin-left: 629px;
@@ -1554,14 +1549,13 @@ footer {
   .products {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0px;
-    justify-content: space-around;
-    margin-left: -81px;
-    align-content: flex-start;
-    align-items: stretch;
-    margin-top: -32px;
-    padding-left: 60px;
+    flex-wrap: nowrap; /* Prevents wrapping to keep items in a row */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    gap: 10px; /* Space between product cards */
+    justify-content: flex-start; /* Align items to the start */
+    margin-left: 0; /* Adjust margins for better layout on small screens */
+    margin-top: 0;
+    padding-left: 0;
   }
   .btnnreview {
     background-color: #edecec;
