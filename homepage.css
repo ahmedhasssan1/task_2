@@ -222,6 +222,7 @@ nav ul li a {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-around;
+  align-items: center;
 }
 .style-grid {
   display: flex;
@@ -372,7 +373,7 @@ nav ul li a {
   gap: 10px;
   justify-content: space-around;
   align-content: flex-start;
-  align-items: stretch;
+  align-items: center;
 }
 
 .product-card {
@@ -1132,7 +1133,7 @@ footer {
     justify-content: flex-start; /* Aligns items to the left */
     margin-left: -63px;
     align-content: flex-start;
-    align-items: end;
+    align-items: center;
     margin-top: -62px;
     padding-left: 60px;
     flex-wrap: nowrap; /* Prevent wrapping for horizontal scrolling */
@@ -1155,7 +1156,7 @@ footer {
     justify-content: flex-start; /* Use flex-start to align items at the start */
     margin-left: -63px;
     align-content: flex-start;
-    align-items: end;
+    align-items: center;
     margin-top: 7px;
     padding-left: 60px;
     flex-wrap: nowrap; /* Prevent wrapping for horizontal scrolling */
@@ -1314,13 +1315,25 @@ footer {
     flex-wrap: wrap;
     padding: 20px;
   }
-  .new-arrival2 {
-    margin-left: 90px;
-  }
 
   .brands-container span {
     font-size: 14px;
     margin: 5px;
+  }
+}
+@media (max-width: 768px) and (min-width: 400px) {
+  .new-arrival2 {
+    margin-left: 26%;
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 61px;
+  }
+}
+@media (max-width: 320px) {
+  .new-arrival2 {
+    margin-left: 80px;
+    font-size: 30px;
+    font-weight: 900;
   }
 }
 @media (max-width: 300px) {
@@ -1535,6 +1548,7 @@ footer {
     margin-left: -65px;
     margin-top: -100px;
   }
+
   .stats {
     display: flex;
     justify-content: space-around;

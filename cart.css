@@ -43,12 +43,17 @@ body {
   position: relative;
 }
 .navbar .search-bar input {
-  width: 70%;
+  width: 65%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
   margin-left: 160px;
   background-color: #e1e1e1;
+}
+@media (min-width: 775px) {
+  #sideicon {
+    display: none;
+  }
 }
 .navbar .icons {
   display: flex;
@@ -307,12 +312,12 @@ body {
   .search-bar {
     display: block; /* Show the search bar */
   }
-
-  .icons .fa-search {
-    display: none; /* Hide only the search icon */
+}
+@media (min-width: 1100px) {
+  .navbar .icons i {
+    display: none;
   }
 }
-
 @media (max-width: 765px) {
   .search input {
     display: none; /* Hide search bar on small screens */
@@ -335,10 +340,6 @@ body {
   .search-bar {
     width: 30%;
     display: block; /* Show the search bar */
-  }
-
-  .search .fa-search {
-    display: none; /* Hide only the search icon */
   }
 }
 @media (max-width: 400px) {
@@ -376,7 +377,22 @@ body {
     margin-left: 20px;
   }
 }
-
+@media (max-width: 1100px) and (min-width: 750px) {
+  .navbar .search-bar input {
+    display: none;
+  }
+  .navbar .icons i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 620px) and(min-width:400px) {
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+}
 .sidebar {
   position: fixed;
   left: 0;
@@ -456,5 +472,42 @@ label #cancel {
 @media (max-width: 768px) and (min-width: 700px) {
   #sideicon {
     display: none;
+  }
+}
+@media (min-width: 1324px) {
+  .newsletter h2 {
+    font-size: 31px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    margin-left: -637px;
+  }
+  .newsletter input {
+    width: 252px;
+    height: 4px;
+    padding: 22px 17px;
+    border: none;
+    border-radius: 20px;
+    margin-right: 79px;
+    margin-top: -73px;
+    margin-left: 965px;
+    margin-bottom: 45px;
+  }
+  .emailsecttion {
+    display: flex;
+    margin-left: 40px;
+    flex-direction: column;
+  }
+  .newsletter button {
+    padding: 12px 17px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 957px;
+    margin-top: -39px;
+    height: 42px;
+    margin-right: 105px;
   }
 }
