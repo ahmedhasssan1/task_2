@@ -488,7 +488,7 @@ label #cancel {
   .newsletter input {
     width: 252px;
     height: 4px;
-    padding: 22px 17px;
+    padding: 18px 12px;
     border: none;
     border-radius: 20px;
     margin-right: 79px;
@@ -527,6 +527,6 @@ label #cancel {
     margin-left: 957px;
     margin-top: -39px;
     height: 42px;
-    margin-right: 54px;
+    margin-right: 100px;
   }
 }
