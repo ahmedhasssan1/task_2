@@ -732,7 +732,7 @@ footer {
     margin-top: 0px;
     margin-bottom: -17px;
     margin-right: 1px;
-    margin-left: 0px;
+    margin-left: 69px;
   }
 }
 @media (min-width: 769px) and (max-width: 900px) {
@@ -1659,7 +1659,7 @@ footer {
     margin-right: 28px;
   }
   .newsletter-input button {
-    width: 135%;
+    width: 122%;
     border-radius: 20px;
     margin-left: -10px;
   }
@@ -1711,7 +1711,7 @@ footer {
     margin-left: 10px;
   }
   .newsletter-input button {
-    width: 118%;
+    width: 72%;
     border-radius: 20px;
   }
   .review {
