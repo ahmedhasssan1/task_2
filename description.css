@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 .header2 {
@@ -198,7 +198,7 @@ body {
 }
 .tabs .tab {
   padding: 10px 20px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 4px solid #e0e0e0; /* Increased border height to 4px */
   border-radius: 5px;
   cursor: pointer;
   width: 390px;
@@ -848,7 +848,8 @@ footer {
   margin-top: 20px;
 }
 .text_allreview {
-  margin-top: -43px;
+  font-weight: 600;
+  margin-top: -32px;
 }
 .latestbutton {
   margin-top: -46px;
@@ -1474,6 +1475,7 @@ footer {
     font-weight: 700;
   }
 }
+
 @media (max-width: 768px) and (min-width: 600px) {
   .newsletter-input input[type='email'] {
     padding: 11px;
@@ -1481,6 +1483,7 @@ footer {
     border-radius: 23px;
     width: 166px;
   }
+
   .another-btn {
     position: absolute;
     top: 0px;
@@ -1541,6 +1544,10 @@ footer {
     margin-left: 20px;
     padding-right: 50px;
   }
+  .newsletter-input button {
+    width: 47%;
+    border-radius: 20px;
+  }
 }
 @media (max-width: 769px) and (min-width: 762px) {
   .header .logo {
@@ -1562,7 +1569,8 @@ footer {
     margin-left: 160px;
   }
 }
-@media (max-width: 425px) and (min-width: 325px) {
+
+@media (max-width: 600px) and (min-width: 325px) {
   .newsletter-input input[type='email'] {
     padding: 11px;
     border: 1px solid #ddd;
@@ -1644,9 +1652,16 @@ footer {
     margin-top: 20px;
     margin: 10px -27px;
   }
+  .footer-newsletter {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 33px;
+    margin-right: 28px;
+  }
   .newsletter-input button {
-    width: 118%;
+    width: 135%;
     border-radius: 20px;
+    margin-left: -10px;
   }
   .newsletter-input input[type='email'] {
     padding: 10px;
@@ -1655,6 +1670,66 @@ footer {
     width: 175px;
   }
 }
+@media (max-width: 600px) and (min-width: 426px) {
+  .newsletter-input input[type='email'] {
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 23px;
+    width: 166px;
+  }
+
+  .write-review-btn,
+  .another-btn {
+    position: relative;
+    top: 14px;
+    right: -6px;
+    margin-left: 153px;
+  }
+  .latestbutton {
+    margin-left: 332px;
+    margin-top: -45px;
+    width: 40px;
+  }
+  .text_allreview {
+    margin-top: -1px;
+    margin-left: -9px;
+  }
+  .write-review-btn,
+  .another-btn {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    margin-left: 153px;
+    padding: 12px 10px;
+  }
+  .reviews {
+    padding: 15px;
+    text-align: left;
+    margin-top: 14px;
+    position: relative;
+    background-color: #f5f5f5;
+    margin-left: 10px;
+  }
+  .newsletter-input button {
+    width: 118%;
+    border-radius: 20px;
+  }
+  .review {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    text-align: left;
+    flex: 0 2 23%;
+    /* max-width: 25%; */
+    margin-right: -1px;
+    margin-left: 20px;
+    padding-right: 50px;
+  }
+}
+
 @media (max-width: 430px) {
   .container {
     display: flex;

@@ -17,6 +17,7 @@ body {
   font-weight: bold;
 }
 .navbar {
+  border-bottom: 1px solid lightgrey;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -193,6 +194,8 @@ body {
   font-weight: bold;
 }
 .newsletter {
+  margin-right: 10px;
+  margin-left: 10px;
   background-color: #000;
   color: #fff;
   padding: 40px 20px;
@@ -205,6 +208,7 @@ body {
   margin-bottom: 20px;
 }
 .newsletter input {
+  margin-bottom: 3px;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -489,7 +493,7 @@ label #cancel {
     border-radius: 20px;
     margin-right: 79px;
     margin-top: -73px;
-    margin-left: 965px;
+    margin-left: 954px;
     margin-bottom: 45px;
   }
   .emailsecttion {
@@ -509,5 +513,20 @@ label #cancel {
     margin-top: -39px;
     height: 42px;
     margin-right: 105px;
+  }
+}
+@media (min-width: 1324px) {
+  .newsletter button {
+    padding: 12px 17px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 957px;
+    margin-top: -39px;
+    height: 42px;
+    margin-right: 54px;
   }
 }
