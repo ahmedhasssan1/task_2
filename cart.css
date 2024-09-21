@@ -424,8 +424,8 @@ ul li:hover a {
   .navbar .logo {
     font-size: 24px;
     font-weight: bold;
-    margin-left: 20px;
-    padding: 10px 10px;
+    margin-left: -7px;
+    padding: 2px 8px;
   }
   .navbar .icons {
     display: flex;
@@ -442,7 +442,7 @@ ul li:hover a {
   .cart-item-quantity {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
     margin-left: 10px;
   }
 }
