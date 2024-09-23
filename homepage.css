@@ -1190,7 +1190,7 @@ footer {
     text-align: center;
     margin-top: -51px;
   }
-  .view-all-button2 {
+  .view-all-button2,.view-all-button {
     padding: 10px 20px;
     background-color: #f8f8f8;
     width: 270px;
