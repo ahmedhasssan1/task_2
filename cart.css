@@ -89,6 +89,9 @@ body {
 }
 .cart-items {
   flex: 2;
+  height:300px;
+  overflow-y:scroll;
+  
 }
 .order-summary {
   flex: 1;
